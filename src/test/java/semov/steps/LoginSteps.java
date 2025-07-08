@@ -21,6 +21,11 @@ public class LoginSteps {
         page.openUrl(EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("semov.base.url"));
         page.esperarCargaLogin();
     }
+    @Step
+    public void abrirLinkDePagos(){
+        page.openUrl(EnvironmentSpecificConfiguration.from(environmentVariables).getProperty("semov.pagos.url"));
+        Util.waitTime(4);
+    }
 
     @Step
     public void autenticarseEnLogin(DataTable table){

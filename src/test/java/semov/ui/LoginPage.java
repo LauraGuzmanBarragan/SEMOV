@@ -10,7 +10,8 @@ public class LoginPage extends PageObject {
 
     @FindBy(xpath = "//div[@class='general-style dark title-6-rounded w-100 q-pa-none text-center q-mb-sm']")
     private WebElement lblBienvenido;
-
+    @FindBy(xpath = "//img[@class='q-img__image q-img__image--with-transition q-img__image--loaded']")
+    private WebElement lblImagen;
     @FindBy(xpath = "//input[@placeholder='Correo electrónico']")
     private WebElement inputEmail;
 
@@ -24,8 +25,10 @@ public class LoginPage extends PageObject {
     private WebElement buttonVerificar;
 
     public void esperarCargaLogin(){
-        lblBienvenido.isDisplayed();
         Util.waitTime(2);
+        lblBienvenido.isDisplayed();
+        lblImagen.isDisplayed();
+        Util.waitTime(5);
     }
 
     private void ingresarEmail(String email){
@@ -70,7 +73,7 @@ public class LoginPage extends PageObject {
         ingresarCodigo(codigo);
         Util.waitTime(1);
         presionarBotonVerificar();
-        Util.waitTime(2);
+        Util.waitTime(4);
     }
 
 }

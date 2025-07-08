@@ -17,6 +17,10 @@ public class LoginSD {
     public void abrirWebDemoshop(){
         steps.abrirWeb();
     }
+    @Given("que ingreso a la plataforma de pagos")
+    public void abrirLinkPagos(){
+        steps.abrirLinkDePagos();
+    }
 
     @When("ingreso el email y clave en el login")
     public void autenticarseEnLogin(DataTable table){
